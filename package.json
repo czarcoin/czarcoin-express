@@ -1,0 +1,38 @@
+{
+  "name": "storj-express",
+  "version": "0.0.1",
+  "description": "express middleware that exposes a configurable storj endpoint on an express server",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dylanlott/storj-express.git"
+  },
+  "keywords": [
+    "storj",
+    "express",
+    "middleware",
+    "encryption",
+    "backup",
+    "endpoint"
+  ],
+  "author": "Dylan Lott <dylan@storj.io>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dylanlott/storj-express/issues"
+  },
+  "homepage": "https://github.com/dylanlott/storj-express#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "storj": "github:storj/node-libstorj",
+    "storj-service-error-types": "^1.2.0"
+  },
+  "devDependencies": {
+    "express": "^4.15.4",
+    "mocha": "^3.5.0",
+    "sinon": "^3.2.0",
+    "tape": "^4.8.0"
+  }
+}
