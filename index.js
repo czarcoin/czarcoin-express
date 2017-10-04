@@ -1,8 +1,11 @@
 const assert = require('assert');
 const express = require('express');
 const errors = require('storj-service-error-types');
+const middleware = require('storj-service-middleware');
+
 const { Environment } = require('storj');
 const app = express();
+const rawbody = middleware.rawbody;
 
 const server = (config) => {
   const storj = new Environment({
@@ -15,6 +18,9 @@ const server = (config) => {
 
   const server = express();
 
+  /*
+   * BASIC REQUESTS
+   */
   server.get('/', (req, res) => {
     storj.getInfo((err, result) => {
       if (err) res.status(500).send(errors.InternalError());
@@ -23,6 +29,9 @@ const server = (config) => {
     });
   });
 
+  /*
+   * BUCKETS
+   */
   server.get('/buckets', (req, res) => {
     storj.getBuckets((err, result) => {
       if (err) {
@@ -30,6 +39,19 @@ const server = (config) => {
       }
 
       res.status(200).send(result);
+    });
+  });
+
+  server.post('/buckets', rawbody, (req, res) => {
+    storj.createBucket(req.body.bucketName, (err, result) => {
+      if (err) {
+        return res.status(500).send(errors.InternalError());
+      }
+
+      return res.status(201).send({
+        message: 'success',
+        result
+      });
     });
   });
 
