@@ -1,6 +1,6 @@
-const assert = require('assert'); 
+const assert = require('assert');
 const sinon = require('sinon');
-const middleware = require('..');
+const lib = require('..');
 
 describe('storj-express', function () {
   beforeEach(function () {
@@ -13,17 +13,12 @@ describe('storj-express', function () {
 
   describe('storj()', function () {
     beforeEach(function () {
-      // declare a spy on every function in middleware
-      Object.keys(middleware).forEach(function (key) {
-        if (typeof middleware[key] === 'function') {
-          this.sandbox.spy(middleware, key)
+      // declare a spy on every function in lib
+      Object.keys(lib).forEach(function (key) {
+        if (typeof lib[key] === 'function') {
+          this.sandbox.spy(lib, key)
         }
       }.bind(this))
-    })
-
-    it('sets up options', function () {
-      middleware();
-
-    })
-  })
-})
+    });
+  });
+});
