@@ -70,9 +70,6 @@ const server = (config) => {
   /*
    * FILES
    */
-
-
-
   server.get('/buckets/:id', (req, res) => {
     storj.listFiles(req.params.id, (err, result) => {
       if (err) handleError(err, req, res);
@@ -94,4 +91,4 @@ const server = (config) => {
   return server;
 }
 
-exports.Storj = server;
+module.exports = server;

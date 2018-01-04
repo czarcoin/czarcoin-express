@@ -18,7 +18,7 @@ app.use('/storj', storj({
   bridgePass: <your-storj-password>,
   encryptionKey: 'abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about',
   logLevel: 4
-});
+}));
 
 app.listen(1337, () => {
   console.log('storj-enabled express server now running on port 1337');
@@ -44,7 +44,7 @@ The following routes still need to be implemented
 
 - [x] .createBucket(bucketName, function(err, result) {}) - Creates a bucket
 
-- [ ] .deleteBucket(bucketId, function(err, result) {}) - Deletes a bucket
+- [x] .deleteBucket(bucketId, function(err, result) {}) - Deletes a bucket
 
 - [ ] .listFiles(bucketId, function(err, result) {}) - List files in a bucket
 
