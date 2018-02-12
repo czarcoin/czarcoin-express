@@ -46,9 +46,9 @@ The following routes still need to be implemented
 
 - [x] .deleteBucket(bucketId, function(err, result) {}) - Deletes a bucket
 
-- [ ] .listFiles(bucketId, function(err, result) {}) - List files in a bucket
+- [x] .listFiles(bucketId, function(err, result) {}) - List files in a bucket
 
-- [ ] .storeFile(bucketId, filePath, options) - Uploads a file, returns state object
+- [x] .storeFile(bucketId, filePath, options) - Uploads a file, returns state object
 
 - [ ]  .storeFileCancel(state) - This will cancel an upload
 
@@ -56,9 +56,9 @@ The following routes still need to be implemented
 
 - [ ] .resolveFileCancel(state) - This will cancel a download
 
-- [ ] .deleteFile(bucketId, fileId, function(err, result) {}) - Deletes a file from a bucket
+- [x] .deleteFile(bucketId, fileId, function(err, result) {}) - Deletes a file from a bucket
 
-- [ ] .destroy() - This will zero and free memory of encryption keys and the environment
+- [x] .destroy() - This will zero and free memory of encryption keys and the environment
 
 
 
