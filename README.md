@@ -1,4 +1,4 @@
-storj-express
+czarcoin-express
 =============
 
 add a storj server to an existing express app quickly and easily 
